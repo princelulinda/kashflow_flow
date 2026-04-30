@@ -50,7 +50,7 @@ export default function DashboardPage() {
   }, [])
 
   const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(amount / 100)
+    return new Intl.NumberFormat('bi', { style: 'currency', currency: 'BIF' }).format(amount)
   }
 
   const totalBalance = wallets.reduce((acc, curr) => acc + curr.balance, 0)
@@ -228,7 +228,7 @@ export default function DashboardPage() {
                       <div className="h-full bg-sidebar-primary rounded-full w-[69%]" />
                     </div>
                     <p className="text-[10px] text-muted-foreground font-medium italic">
-                      Encore 1,550 € pour atteindre votre but !
+                      Encore 1,55000 BIF  pour atteindre votre but !
                     </p>
                   </div>
                 </div>

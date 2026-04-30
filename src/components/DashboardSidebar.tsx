@@ -284,7 +284,9 @@ export function DashboardSidebar() {
         {/* Toggle Sidebar Button */}
         <button
           onClick={() => setIsCollapsed(!isCollapsed)}
-          className="absolute flex items-center justify-center w-6 h-6 transition-all border rounded-full -right-3 top-10 bg-background border-sidebar-border hover:bg-sidebar-accent shadow-sm z-50 text-sidebar-foreground opacity-0 group-hover:opacity-100 lg:opacity-100"
+          className={cn(
+            "absolute flex items-center justify-center w-6 h-6 transition-all border rounded-full -right-3 top-10 bg-background border-sidebar-border hover:bg-sidebar-accent shadow-sm z-50 text-sidebar-foreground opacity-0 group-hover:opacity-100 lg:opacity-100"
+          )}
         >
           {isCollapsed ? <ChevronRight className="w-3.5 h-3.5" /> : <ChevronLeft className="w-3.5 h-3.5" />}
         </button>
