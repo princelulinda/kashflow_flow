@@ -24,9 +24,9 @@ export const authService = {
 
     try {
       const response = await api.post('/auth/signup', payload);
-      const { user, accessToken } = response.data;
-      store.setAuth(user, accessToken);
-      return response.data;
+      const { user, token } = response.data?.data;
+      store.setAuth(user, token);
+      return response.data?.data;
     } catch (error: any) {
       const apiError = error.response?.data;
       const message = apiError?.errors?.[0]?.message || apiError?.message || 'Une erreur est survenue lors de l\'inscription';
