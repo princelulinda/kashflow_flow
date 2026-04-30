@@ -142,7 +142,7 @@ export default function LoginPage() {
         {/* Footer */}
         <p className="text-center text-sm text-slate-500">
           Nouveau ?{" "}
-          <Link to="/signup" className="font-bold text-slate-900 underline underline-offset-4 dark:text-slate-100">
+          <Link to={`/signup${location.search}`} className="font-bold text-slate-900 underline underline-offset-4 dark:text-slate-100">
             Créer un compte
           </Link>
         </p>

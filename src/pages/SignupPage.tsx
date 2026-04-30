@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -9,9 +9,10 @@ import { AlertCircle, Loader2 } from "lucide-react";
 import logo from "@/assets/kashflow_logo.png";
 
 export default function SignupPage() {
+  const [searchParams] = useSearchParams();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState(searchParams.get("email") || "");
   const [password, setPassword] = useState("");
   
   const navigate = useNavigate();
@@ -169,7 +170,7 @@ export default function SignupPage() {
         {/* Footer */}
         <p className="text-center text-sm text-slate-500">
           Déjà un compte ?{" "}
-          <Link to="/login" className="font-bold text-slate-900 underline underline-offset-4 dark:text-slate-100">
+          <Link to={`/login${location.search}`} className="font-bold text-slate-900 underline underline-offset-4 dark:text-slate-100">
             Se connecter
           </Link>
         </p>
