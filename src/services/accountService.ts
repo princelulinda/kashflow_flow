@@ -9,7 +9,21 @@ export interface Wallet {
   updatedAt: string;
 }
 
+export interface AccountStats {
+  total_balance: number;
+  today: { sales_amount: number; transaction_count: number };
+  wallets_count: number;
+}
+
 export const accountService = {
+  /**
+   * Overall stats: total balance and today's sales through the user's applications
+   */
+  async getStats() {
+    const response = await api.get<AccountStats>('/account/stats');
+    return response.data;
+  },
+
   /**
    * Get all user wallets (dev and vendor)
    */

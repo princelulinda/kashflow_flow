@@ -7,6 +7,7 @@ import TransactionsPage from './pages/TransactionsPage';
 import SettingsPage from './pages/SettingsPage';
 import WithdrawPage from './pages/WithdrawPage';
 import OAuthConsentPage from './pages/OAuthConsentPage';
+import LandingPage from './pages/LandingPage';
 import { DashboardLayout } from './components/DashboardLayout';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import './App.css';
@@ -37,8 +38,10 @@ function App() {
           </Route>
         </Route>
 
+        {/* Landing page publique */}
+        <Route path="/" element={<LandingPage />} />
+
         {/* Redirects */}
-        <Route path="/" element={<Navigate to="/dashboard" replace />} />
         <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Routes>
     </Router>
